@@ -72,30 +72,42 @@ document.getElementsByTagName('nav')[0].appendChild(github)
 let logo = document.getElementById("logo-img");
 logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
+let addBr =  siteContent.cta.h1.split(' ')
+let addBrr = addBr.join('<br/>') 
 
-
-let logo2 = document.getElementById("cta-img");
-logo2.setAttribute("src", siteContent["cta"]["img-src"]);
-document.querySelector('.cta-text').children[0].innerHTML= siteContent.cta.h1
+let headerImage = document.getElementById("cta-img");
+headerImage.setAttribute("src", siteContent["cta"]["img-src"]);
+document.querySelector('.cta-text').children[0].innerHTML= addBrr
 document.querySelector('.cta-text').children[1].innerText= siteContent.cta.button;
 
 
-let logo3 = document.getElementById("middle-img");
-logo3.setAttribute("src", siteContent["main-content"]["middle-img-src"]); 
+let mainContentImage= document.getElementById("middle-img");
+mainContentImage.setAttribute("src", siteContent["main-content"]["middle-img-src"]); 
 
 
-// 11
+
 let element1 = Object.values(siteContent['main-content'])
-// 2  same [i]
-const index2 = document.querySelectorAll('.top-content')[0].children[0].children;
+let topContent = document.querySelectorAll('.top-content')[0];
+let topBottom = document.querySelectorAll('.bottom-content')[0];
+
+const index2 = topContent .children[0].children;
 for(let i=0; i <=  index2.length -1; i++){
   index2[i].innerText = element1[i];
 }
 
-// const index3 = document.querySelectorAll('.top-content')[0].children[1].children;
-// for(let i=0; i <=  index2.length -1; i++){
-//   index3[i].innerText = element1[i];
-// }
+topContent.children[1].children[0].innerText = siteContent["main-content"]['about-h4']
+topContent.children[1].children[1].innerText = siteContent["main-content"]['about-content']
+
+topBottom.children[0].children[0].innerText = siteContent["main-content"]['services-h4']
+topBottom.children[0].children[1].innerText = siteContent["main-content"]['services-content']
+
+topBottom.children[1].children[0].innerText = siteContent["main-content"]['product-h4']
+topBottom.children[1].children[1].innerText = siteContent["main-content"]['product-content']
+
+topBottom.children[2].children[0].innerText = siteContent["main-content"]['vision-h4']
+topBottom.children[2].children[1].innerText = siteContent["main-content"]['vision-content']
+
+
 
 
 const index4 = document.querySelector('.contact').children
@@ -103,7 +115,6 @@ let element4 = Object.values(siteContent.contact)
 for(let i=0; i <=  index4.length -1; i++){
   index4[i].innerText = element4[i]
 }
-
 
 document.getElementsByTagName('footer')[0].children[0].innerText = siteContent.footer.copyright;
 
