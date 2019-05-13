@@ -57,14 +57,15 @@ for(let i=0; i <=  index1.length -1; i++){
   index1[i].style.color = 'green'
 }
 //Append
+let navTag = document.getElementsByTagName('nav')[0];
 let history = document.createElement('a')
 history.innerText = 'History';
 history.style.color = 'green'
 let github= document.createElement('a')
 github.innerText = 'Github';
 github.style.color = 'green'
-document.getElementsByTagName('nav')[0].appendChild(history)
-document.getElementsByTagName('nav')[0].appendChild(github)
+navTag.appendChild(history)
+navTag.appendChild(github)
 
 
 
@@ -76,9 +77,10 @@ let addBr =  siteContent.cta.h1.split(' ')
 let addBrr = addBr.join('<br/>') 
 
 let headerImage = document.getElementById("cta-img");
+let ctaText = document.querySelector('.cta-text');
 headerImage.setAttribute("src", siteContent["cta"]["img-src"]);
-document.querySelector('.cta-text').children[0].innerHTML= addBrr
-document.querySelector('.cta-text').children[1].innerText= siteContent.cta.button;
+ctaText.children[0].innerHTML= addBrr
+ctaText.children[1].innerText= siteContent.cta.button;
 
 
 let mainContentImage= document.getElementById("middle-img");
