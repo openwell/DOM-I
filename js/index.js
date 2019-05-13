@@ -53,8 +53,21 @@ const siteContent = {
 const index1 = document.getElementsByTagName('nav')[0].children;
 let element = Object.values(siteContent.nav)
 for(let i=0; i <=  index1.length -1; i++){
-  index1[i].innerText = element[i]
+  index1[i].innerText = element[i];
+  index1[i].style.color = 'green'
 }
+//Append
+let history = document.createElement('a')
+history.innerText = 'History';
+history.style.color = 'green'
+let github= document.createElement('a')
+github.innerText = 'Github';
+github.style.color = 'green'
+document.getElementsByTagName('nav')[0].appendChild(history)
+document.getElementsByTagName('nav')[0].appendChild(github)
+
+
+
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute("src", siteContent["nav"]["img-src"]);
@@ -79,12 +92,20 @@ for(let i=0; i <=  index2.length -1; i++){
   index2[i].innerText = element1[i];
 }
 
-const index3 = document.querySelectorAll('.top-content')[0].children[1].children;
-for(let i=0; i <=  index2.length -1; i++){
-  index3[i].innerText = element1[i];
+// const index3 = document.querySelectorAll('.top-content')[0].children[1].children;
+// for(let i=0; i <=  index2.length -1; i++){
+//   index3[i].innerText = element1[i];
+// }
+
+
+const index4 = document.querySelector('.contact').children
+let element4 = Object.values(siteContent.contact)
+for(let i=0; i <=  index4.length -1; i++){
+  index4[i].innerText = element4[i]
 }
 
 
+document.getElementsByTagName('footer')[0].children[0].innerText = siteContent.footer.copyright;
 
 
 
